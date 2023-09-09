@@ -83,6 +83,6 @@ SELECT SUM(escape_attempts) AS escape_attempts,neutered from animals GROUP BY ne
 /*What is the minimum and maximum weight of each type of animal?*/
 SELECT MIN(weight_kg) AS minimum_weight,MAX(weight_kg) as max_weight,species from animals GROUP BY species;
 /*What is the average number of escape attempts per animal type of those born between 1990 and 2000?*/
-SELECT MIN(weight_kg) AS min_weight,MAX(weight_kg) as max_weight,species from animals GROUP BY species;
+SELECT AVG(escape_attempts)::NUMERIC(10,2) from animals WHERE EXTRACT(YEAR FROM date_of_birth) BETWEEN 1990 AND 2000 GROUP BY species;
 
 
