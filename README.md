@@ -98,7 +98,7 @@ To run the project, execute the following command:
 
 👤 **Author**
 
-- GitHub: [@RKanyoro](https://github.com/RKanyoro)
+- GitHub: [@Kanyorok](https://github.com/Kanyorok)
 - Twitter: [@CarlosMbugua](https://twitter.com/CarlosMbugua)
 - LinkedIn: [Robert Mbugua](https://www.linkedin.com/in/robert-mbugua-kanyoro/)
 
