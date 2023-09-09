@@ -88,11 +88,11 @@ SELECT AVG(escape_attempts)::NUMERIC(10,2) from animals WHERE EXTRACT(YEAR FROM 
 /*What animals belong to Melody Pond?*/
 SELECT name FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
 /*List of all animals that are pokemon (their type is Pokemon).*/
-SELECT * FROM animals INNER JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
+SELECT animals.name FROM animals INNER JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
 /*List all owners and their animals, remember to include those that don't own any animal.*/
 SELECT full_name, name FROM owners LEFT JOIN animals ON animals.owner_id = owners.id;
 /*How many animals are there per species?*/
-SELECT COUNT(*) as animals_per_species, species.name FROM animals INNER JOIN species ON animals.species_id = species.id GROUP BY species.name;
+SELECT COUNT(*), species.name FROM animals INNER JOIN species ON animals.species_id = species.id GROUP BY species.name;
 /*List all Digimon owned by Jennifer Orwell.*/
 SELECT animals.name FROM animals INNER JOIN species ON animals.species_id = species.id INNER JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
 /*List all animals owned by Dean Winchester that haven't tried to escape.*/
