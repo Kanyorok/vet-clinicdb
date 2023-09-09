@@ -16,6 +16,30 @@ CREATE TABLE owners (
    age INT
 );
 
+CREATE TABLE vets (
+   id SERIAL PRIMARY KEY,
+   name VARCHAR(255),
+   age INT,
+   date_of_graduation date
+);
+
+CREATE TABLE specializations (
+    specialization_id SERIAL PRIMARY KEY, 
+    vet_id INT,                           
+    species_id INT,                       
+    CONSTRAINT fk_vet FOREIGN KEY (vet_id) REFERENCES vets (id),
+    CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species (id)
+);
+
+CREATE TABLE visits (
+    visit_id SERIAL PRIMARY KEY,    
+    animal_id INT,                  
+    vet_id INT,                     
+    visit_date DATE,                
+    CONSTRAINT fk_animal FOREIGN KEY (animal_id) REFERENCES animals (id),
+    CONSTRAINT fk_vet FOREIGN KEY (vet_id) REFERENCES vets (id)
+);
+
 CREATE TABLE species (
    id SERIAL PRIMARY KEY,
    name VARCHAR(100)
