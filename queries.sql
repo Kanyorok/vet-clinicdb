@@ -118,3 +118,8 @@ SELECT animals.name AS animal_name,animals.date_of_birth,animals.escape_attempts
 SELECT vets.name AS vet_name,animals.name AS animal_name,animals.species_id AS animal_species_id,specializations.species_id AS vets_specialization_id FROM visits  JOIN vets ON visits.vet_id = vets.id JOIN animals  ON visits.animal_id = animals.id JOIN specializations  ON specializations.vet_id = vets.id WHERE specializations.species_id != animals.species_id;
 /*What specialty should Maisy Smith consider getting? Look for the species she gets the most.*/
 SELECT vets.name AS vet_name,species.name AS animal_species,COUNT(species.name) AS number_of_animals FROM visits JOIN vets  ON visits.vet_id = vets.id JOIN animals ON visits.animal_id = animals.id JOIN species ON animals.species_id = species.id WHERE vets.name = 'Maisy Smith' GROUP BY species.name,vets.name ORDER BY number_of_animals DESC LIMIT 1;
+
+/*Day one Performance*/
+SELECT COUNT(*) FROM visits where animal_id = 4;
+SELECT * FROM visits where vet_id = 2;
+SELECT * FROM owners where email = 'owner_18327@mail.com';

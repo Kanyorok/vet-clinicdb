@@ -45,6 +45,12 @@ CREATE TABLE species (
    name VARCHAR(100)
 );
 
+CREATE INDEX animal_id_index ON visits (animal_id);
+
+CREATE INDEX vet_id_index ON visits (vet_id);
+
+CREATE INDEX email_id_index ON owners (email);
+
 ALTER TABLE animals ADD COLUMN species_id INT;
 
 ALTER TABLE animals ADD CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species(id);
