@@ -96,7 +96,13 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **iwu John chinonso**
+
+- GitHub: [@githubhandle](https://github.com/maths29)
+- Twitter: [@twitterhandle](https://twitter.com/maths29)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/iwu-john-b92b01148/)
+
+👤 **Robert Kanyoro**
 
 - GitHub: [@Kanyorok](https://github.com/Kanyorok)
 - Twitter: [@CarlosMbugua](https://twitter.com/CarlosMbugua)
