@@ -66,3 +66,8 @@ INSERT INTO visits (animal_id, vet_id, visit_date) VALUES ((SELECT id FROM anima
 INSERT INTO visits (animal_id, vet_id, visit_date) VALUES ((SELECT id FROM animals WHERE name = 'Boarmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), date '2020-08-03');
 INSERT INTO visits (animal_id, vet_id, visit_date) VALUES ((SELECT id FROM animals WHERE name = 'Blossom'), (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), date '2020-05-24');
 INSERT INTO visits (animal_id, vet_id, visit_date) VALUES ((SELECT id FROM animals WHERE name = 'Blossom'), (SELECT id FROM vets WHERE name = 'William Tatcher'), date '2021-01-11');
+
+/* Day one performance*/
+INSECT INTO visits (animals_id, vet_id, visit_date)
+SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+INSECT INTO owners (full_name, email) select 'owner' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
